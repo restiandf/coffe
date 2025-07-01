@@ -1,0 +1,97 @@
+/* Link aktif di navigasi */
+.active-link {
+  color: #fff !important;
+  background: #d97706 !important;
+  border-radius: 8px;
+  font-weight: bold;
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s;
+  border-bottom: 4px solid #fff !important;
+  box-shadow: 0 2px 8px 0 rgba(217,119,6,0.15);
+}
+.active-link::after {
+  display: none;
+}
+@media (max-width: 768px) {
+  .active-link {
+    background: #d97706 !important;
+    color: #fff !important;
+    border-radius: 8px;
+    border-bottom: 4px solid #fff !important;
+  }
+  .active-link::after {
+    display: none;
+  }
+}
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .gradient-text {
+        background: linear-gradient(45deg, #d4af37, #f4e4bc, #8b7355);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .glass-effect {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .coffee-bean {
+        background: radial-gradient(circle at 30% 30%, #8b4513, #654321);
+        border-radius: 60% 40% 60% 40%;
+      }
+
+/* Animasi menu mobile */
+@keyframes slideDownMenu {
+  from { opacity: 0; transform: translateY(-20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes slideUpMenu {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-20px) scale(0.98); }
+}
+.menu-anim-show {
+  animation: slideDownMenu 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.menu-anim-hide {
+  animation: slideUpMenu 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 30;
+  display: none;
+}
+.menu-overlay.active {
+  display: block;
+}
