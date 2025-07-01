@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Artisan Coffee - Premium Coffee Experience" />
+    <link rel="icon" href="image.png" />
     <title>Artisan Coffee - Premium Coffee Experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -101,11 +103,13 @@
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
+              onclick="window.location.href='explore.html'"
               class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-slide-up"
             >
               Explore Coffee ☕
             </button>
             <button
+              onclick="window.location.href='watch.html'"
               class="border-2 border-amber-600 text-amber-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-amber-600 hover:text-white transition-all duration-300 animate-slide-up"
               style="animation-delay: 0.2s"
             >
@@ -120,7 +124,11 @@
     <section id="products" class="py-20 bg-gradient-to-b from-amber-50 to-orange-100">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16 animate-fade-in">
-          <h2 class="text-5xl md:text-6xl font-black mb-6 gradient-text">Our Signature</h2>
+          <h2
+            class="text-5xl md:text-6xl font-black mb-6 gradient-text underline hover:text-orange-700 transition-colors duration-200 cursor-pointer"
+          >
+            <a href="explore.html">Our Signature</a>
+          </h2>
           <p class="text-xl text-amber-700 max-w-2xl mx-auto">
             Koleksi kopi premium yang dipilih khusus untuk pecinta kopi sejati
           </p>
@@ -305,7 +313,16 @@
           <span class="hover:text-amber-300 cursor-pointer transition-colors duration-300">🐦</span>
           <span class="hover:text-amber-300 cursor-pointer transition-colors duration-300">📺</span>
         </div>
-        <p class="text-amber-300 text-sm">© 2025 Artisan Coffee. All rights reserved.</p>
+        <p class="text-amber-300 text-sm">
+          © 2025 Artisan Coffee by
+          <a
+            href="https://restiandf.my.id/?i=1"
+            target="_blank"
+            rel="noopener"
+            class="underline hover:text-amber-100 transition-colors duration-200"
+            >restiandf</a
+          >. All rights reserved.
+        </p>
       </div>
     </footer>
 

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Story - Artisan Coffee</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #f5e6c5 0%, #e9d8b4 100%);
+      }
+      .old-paper {
+        background: #fdf6e3;
+        border-radius: 32px 32px 40px 40px/28px 28px 36px 36px;
+        box-shadow: 0 8px 32px 0 rgba(120, 72, 0, 0.1), 0 1.5px 0 0 #e2c48d inset;
+        border: 2.5px solid #e2c48d;
+        position: relative;
+        overflow: hidden;
+      }
+      .old-paper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 18px;
+        background: repeating-linear-gradient(90deg, #e2c48d 0 2px, transparent 2px 8px);
+        opacity: 0.25;
+        z-index: 2;
+      }
+      .old-paper::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 18px;
+        background: repeating-linear-gradient(90deg, #e2c48d 0 2px, transparent 2px 8px);
+        opacity: 0.25;
+        z-index: 2;
+      }
+      .grain {
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        opacity: 0.13;
+        background-image: url("https://www.transparenttextures.com/patterns/old-wall.png");
+        mix-blend-mode: multiply;
+      }
+      .timeline {
+        position: relative;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, #bfa05a 0%, #e2c48d 100%);
+        z-index: 0;
+        border-radius: 2px;
+      }
+      .timeline-item {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        z-index: 1;
+        opacity: 0;
+        animation: fadeInLeft 1s forwards;
+      }
+      .timeline-item.right {
+        justify-content: flex-end;
+        animation: fadeInRight 1s forwards;
+      }
+      .timeline-icon {
+        font-size: 2.5rem;
+        background: #f5e6c5;
+        border: 3px solid #bfa05a;
+        border-radius: 50%;
+        padding: 0.5rem 0.7rem;
+        margin: 0 1rem;
+        box-shadow: 0 2px 8px 0 rgba(191, 160, 90, 0.1);
+        z-index: 2;
+      }
+      .timeline-content {
+        background: #fdf6e3;
+        border-radius: 18px;
+        box-shadow: 0 4px 16px 0 rgba(191, 160, 90, 0.1);
+        padding: 1.2rem 1.5rem;
+        min-width: 220px;
+        max-width: 320px;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+        font-family: "Londrina Solid", cursive;
+        font-size: 1.08rem;
+        color: #7c5a1a;
+      }
+      .timeline-content .font-bold {
+        color: #bfa05a;
+        font-size: 1.1rem;
+        font-family: "Londrina Solid", cursive;
+      }
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-60px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(60px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @media (max-width: 640px) {
+        .timeline::before {
+          left: 20px;
+        }
+        .timeline-item,
+        .timeline-item.right {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .timeline-icon {
+          margin: 0 0 0.5rem 0;
+        }
+        .timeline-content {
+          min-width: 0;
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 font-londrina min-h-screen flex flex-col items-center justify-center"
+  >
+    <div class="max-w-2xl w-full text-center p-8 old-paper shadow-lg mt-16 mb-8 relative">
+      <div class="grain"></div>
+      <h1
+        class="text-5xl font-black text-orange-700 mb-6"
+        style="font-family: 'Londrina Solid', cursive"
+      >
+        Watch Story
+      </h1>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-icon">🌱</span>
+          <div class="timeline-content">
+            <div class="font-bold mb-1">2018 - Awal Mula</div>
+            Pak Sastro menanam bibit kopi sambil menyanyikan lagu dangdut favoritnya. Konon katanya,
+            setiap bibit yang ditanam dengan irama koplo tumbuh lebih cepat!
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <span class="timeline-icon">🐦</span>
+          <div class="timeline-content">
+            <div class="font-bold mb-1">2019 - Pesan Burung Jalak</div>
+            Seekor burung jalak datang membawa pesan gaib: "Sangrai kopimu di bawah sinar bulan
+            purnama!" Sejak itu, kopi Pak Sastro makin harum dan sering bikin tetangga penasaran.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-icon">🌕</span>
+          <div class="timeline-content">
+            <div class="font-bold mb-1">2021 - Sangrai Bulan Purnama</div>
+            Malam purnama, Pak Sastro sangrai kopi sambil menari. Hasilnya? Kopi yang katanya bisa
+            bikin siapa saja langsung jago main catur!
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <span class="timeline-icon">♟️</span>
+          <div class="timeline-content">
+            <div class="font-bold mb-1">2022 - Keajaiban Catur</div>
+            Setiap pelanggan yang minum kopi Artisan Coffee tiba-tiba jadi jago catur dan hoki terus
+            seminggu penuh. Warung kopi Pak Sastro pun makin ramai!
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-icon">😄</span>
+          <div class="timeline-content">
+            <div class="font-bold mb-1">2023 - Cerita Bahagia</div>
+            Kini, setiap cangkir Artisan Coffee menyimpan sedikit keajaiban dan cerita kocak dari
+            Pak Sastro. Siapapun yang minum, katanya, bisa ketularan hoki dan jadi lebih bahagia!
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-xs text-amber-500 italic mb-6 mt-2"
+        style="font-family: 'Londrina Solid', cursive"
+      >
+        *Cerita di atas hanya karangan belaka ya.
+      </div>
+      <a
+        href="index.html"
+        class="inline-block bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-3 rounded-full font-bold hover:shadow-lg transition-all duration-300"
+        >Kembali ke Beranda</a
+      >
+    </div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Script aktif!");
+  console.log("Script.js dimuat!");
   // Toggle main menu (mobile) dengan animasi dan overlay
   const navToggle = document.getElementById("nav-toggle");
   const mainMenu = document.getElementById("main-menu");
@@ -77,26 +77,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add cart functionality
   let cart = [];
-  document.querySelectorAll('button:contains("Add to Cart")').forEach((button) => {
-    button.addEventListener("click", function () {
-      this.innerHTML = "Added! ✅";
-      this.style.backgroundColor = "#22c55e";
-      setTimeout(() => {
-        this.innerHTML = "Add to Cart";
-        this.style.backgroundColor = "";
-      }, 2000);
-    });
+  document.querySelectorAll('button').forEach((button) => {
+    if (button.textContent.includes("Add to Cart")) {
+      button.addEventListener("click", function () {
+        this.innerHTML = "Added! ✅";
+        this.style.backgroundColor = "#22c55e";
+        setTimeout(() => {
+          this.innerHTML = "Add to Cart";
+          this.style.backgroundColor = "";
+        }, 2000);
+      });
+    }
   });
 
   // Highlight active nav link with Intersection Observer
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  console.log('Jumlah section:', sections.length);
+  console.log('Jumlah navLinks:', navLinks.length);
+  if (sections.length === 0) {
+    console.warn('Tidak ada section[id] ditemukan di halaman!');
+  }
+  if (navLinks.length === 0) {
+    console.warn('Tidak ada nav a[href^="#"] ditemukan di halaman!');
+  }
 
   function setActiveLinkById(id) {
+    console.log('setActiveLinkById dipanggil dengan id:', id);
     navLinks.forEach(link => {
       link.classList.remove("active-link");
       if (link.getAttribute("href") === `#${id}`) {
         link.classList.add("active-link");
+        console.log('active-link ditambahkan ke:', link.getAttribute("href"));
       }
     });
   }
@@ -110,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        console.log('Section aktif:', entry.target.id);
         setActiveLinkById(entry.target.id);
       }
     });

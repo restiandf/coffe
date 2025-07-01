@@ -1,24 +1,32 @@
 /* Link aktif di navigasi */
 .active-link {
-  color: #fff !important;
-  background: #d97706 !important;
-  border-radius: 8px;
-  font-weight: bold;
+  color: #b45309 !important;
+  background: #fffbe8 !important;
+  border-radius: 16px;
+  font-weight: 900;
   position: relative;
   z-index: 10;
   transition: all 0.3s;
-  border-bottom: 4px solid #fff !important;
-  box-shadow: 0 2px 8px 0 rgba(217,119,6,0.15);
+  border-bottom: 6px solid #f59e42 !important;
+  box-shadow: 0 4px 16px 0 rgba(245,158,66,0.18);
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .active-link::after {
   display: none;
 }
 @media (max-width: 768px) {
   .active-link {
-    background: #d97706 !important;
-    color: #fff !important;
-    border-radius: 8px;
-    border-bottom: 4px solid #fff !important;
+    background: #fffbe8 !important;
+    color: #b45309 !important;
+    border-radius: 16px;
+    border-bottom: 6px solid #f59e42 !important;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
   .active-link::after {
     display: none;
